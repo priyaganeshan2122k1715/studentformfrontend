@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import RegisterForm from "./design";
+import LoginForm from "./LoginForm";
 
-function App() {
+
+
+
+const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userRole, setUserRole] = useState(""); 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {!isLoggedIn ? (
+        <LoginForm setIsLoggedIn={setIsLoggedIn} setUserRole={setUserRole} />
+      ) : userRole === "admin" ? (
+        <RegisterForm></RegisterForm>
+       
+) : (
+        <div>You are logged in, but not an admin.</div>   )}
+       
     </div>
   );
-}
+};
 
 export default App;
