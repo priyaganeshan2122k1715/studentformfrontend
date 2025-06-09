@@ -1,37 +1,30 @@
-
 import React, { useState } from "react";
-
 const EligibilityChecker = () => {
   const [formData, setFormData] = useState({
     age: "",
     course: "",
     eligibilityStatus: "",
   });
-
-  const [errorMessage, setErrorMessage] = useState("");
+const [errorMessage, setErrorMessage] = useState("");
   const eligibilityCriteria = {
     "Software Development": 18,
     "Web Development": 16,
     "Non-Coding Course": 18,
-  
-    "Server-side course":16,
+  "Server-side course":16,
     "Multimedia course":17,
-  
-  "Advanced Course":18,
+"Advanced Course":18,
   };
   const checkEligibility = () => {
     const { age, course } = formData;
     const minAge = eligibilityCriteria[course];
-
-    if (!course || !minAge) {
+ if (!course || !minAge) {
       setFormData((prevData) => ({
         ...prevData,
         eligibilityStatus: "Please select a valid course",
       }));
       return;
     }
-
-    if (age >= minAge) {
+if (age >= minAge) {
       setFormData((prevData) => ({
         ...prevData,
         eligibilityStatus: "Eligible",
@@ -43,24 +36,19 @@ const EligibilityChecker = () => {
       }));
     }
   };
-
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!formData.course || formData.eligibilityStatus === "Not Eligible") {
+if (!formData.course || formData.eligibilityStatus === "Not Eligible") {
       setErrorMessage("You must be eligible for the course to submit the form.");
       return;
     }
-
-    alert("Form submitted successfully!");
+ alert("Form submitted successfully!");
   };
-
-  return (
+return (
     <div>
       <form onSubmit={handleSubmit}>
         <h2>Eligibility Checker</h2>
-
-        <div>
+<div>
           <label>Age:</label>
           <input
             type="number"
@@ -69,8 +57,7 @@ const EligibilityChecker = () => {
             onChange={(e) => setFormData({ ...formData, age: e.target.value })}
           />
         </div>
-
-        <div>
+<div>
           <label>Course:</label>
           <select
             name="course"
@@ -86,15 +73,12 @@ const EligibilityChecker = () => {
             <option value="Advanced Course">Advanced Course</option>
           </select>
         </div>
-
-        <button type="button" onClick={checkEligibility}>Check Eligibility</button>
+<button type="button" onClick={checkEligibility}>Check Eligibility</button>
         <button type="submit">Submit</button>
-
-        {formData.eligibilityStatus && (
+{formData.eligibilityStatus && (
           <p>{formData.eligibilityStatus}</p>
         )}
-
-        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+{errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
       </form>
     </div>
  );

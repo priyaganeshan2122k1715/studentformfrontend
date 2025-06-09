@@ -1,29 +1,23 @@
-
 .edit-profile {
   max-width: 500px;
   margin: auto;
   padding: 20px;
 }
-
 .edit-profile h2 {
   text-align: center;
   color: #444;
 }
-
 .edit-profile form {
   display: flex;
   flex-direction: column;
 }
-
 .edit-profile input,
 .edit-profile select {
   padding: 8px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
-
-.edit-profile button {
+}.edit-profile button {
   padding: 10px;
   background-color: #28a745;
   color: white;
@@ -31,7 +25,6 @@
   cursor: pointer;
   border-radius: 5px;
 }
-
 .edit-profile button:hover {
   background-color: #218838;
 }

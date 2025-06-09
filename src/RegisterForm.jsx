@@ -3,10 +3,7 @@ import axios from "axios";
 import CommonFields from "./CommonFields";
 import AdminDetails from "./AdminDetails";
 import AdmissionDetails from "./AdmissionDetails";
-
 import "./priya.css"
-
-
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
     username: "",
@@ -263,9 +260,8 @@ const RegisterForm = () => {
         admissionMonth,
         admissionYear,
       };
-  
-      axios
-        .post("https://backend-znrk.onrender.com/register", { formData: dataToSubmit })
+  axios
+        .post("https://studentform-4.onrender.com/register", { formData: dataToSubmit })
         .then(() => {
           alert("Form submitted successfully!");
           fetchStudentCountAndDetails(admissionMonth, admissionYear);
@@ -278,7 +274,7 @@ const RegisterForm = () => {
     };
     const fetchStudentStats = (admissionMonth, admissionYear) => {
       axios
-        .get(`https://backend-znrk.onrender.com/stats/${admissionMonth}/${admissionYear}`)
+        .get(`https://studentform-4.onrender.com/stats/${admissionMonth}/${admissionYear}`)
         .then((res) => {
           const data = res.data;
           setMonthlyStats({
@@ -296,7 +292,7 @@ const RegisterForm = () => {
   
      const fetchStudentCountAndDetails = () => {
       axios
-        .get("https://backend-znrk.onrender.com/api/student-details")
+        .get("https://studentform-4.onrender.com/api/student-details")
         .then((res) => {
           setStudentCount(res.data.count || 0);
           setStudentDetails(res.data.data || []);

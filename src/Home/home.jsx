@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
 const Home = () => {
   const [studentCount, setStudentCount] = useState(0);
   const [monthlyStats, setMonthlyStats] = useState({
@@ -11,12 +10,10 @@ const Home = () => {
     totalStudentsThisYear: 0,
   });
   const [showSubCourses, setShowSubCourses] = useState(false); 
-
-  const toggleSubCourses = () => {
+const toggleSubCourses = () => {
     setShowSubCourses(!showSubCourses);
   };
-
-  const subCourseDetails = {
+const subCourseDetails = {
     "Java/J2EE": {
       online: { amount: "10000", tutor: "Maha", type: "online", duration: "6 months" },
       offline: { amount: "10500", tutor: "Ravi", type: "offline", duration: "6 months" },
@@ -167,9 +164,7 @@ const Home = () => {
       offline: { amount: "17500", tutor: "Logesh", type: "offline", duration: "12 months" },
     },
   };
-
-
-  const mainCourses = [
+const mainCourses = [
     "Software Development",
     "Server-side Course",
     "Multimedia Course",
@@ -177,26 +172,23 @@ const Home = () => {
     "Non-Coding Course",
     "Advanced Course",
   ];
-
-  useEffect(() => {
+useEffect(() => {
     fetchStudentData();
   }, []);
 
   const fetchStudentData = async () => {
     try {
-      const res = await axios.get("https://backend-znrk.onrender.com/api/student-details");
+      const res = await axios.get("https://studentform-4.onrender.com/api/student-details");
       setStudentCount(res.data.count || 0);
-
-      const currentMonth = new Date().getMonth() + 1;
+const currentMonth = new Date().getMonth() + 1;
       const currentYear = new Date().getFullYear();
-      const statsRes = await axios.get(`https://backend-znrk.onrender.com/stats/${currentMonth}/${currentYear}`);
+      const statsRes = await axios.get(`https://studentform-4.onrender.com/stats/${currentMonth}/${currentYear}`);
       setMonthlyStats(statsRes.data);
     } catch (err) {
       console.error("Error fetching data:", err);
     }
   };
-
-  return (
+ return (
     <div style={styles.container}>
       <div style={styles.hero}>
         <h1>📘 ADMISSION PORTAL</h1>
@@ -205,28 +197,23 @@ const Home = () => {
           <button style={styles.button}>Register New Student</button>
         </Link>
       </div>
-
-      <div style={styles.statsContainer}>
+<div style={styles.statsContainer}>
         <div style={styles.statBox}><h3>Total Students</h3><p>{studentCount}</p></div>
         <div style={styles.statBox}><h3>This Month: Registered</h3><p>{monthlyStats.registeredThisMonth}</p></div>
         <div style={styles.statBox}><h3>This Month: Joined</h3><p>{monthlyStats.joinedThisMonth}</p></div>
         <div style={styles.statBox}><h3>This Month: Rejected</h3><p>{monthlyStats.rejectedThisMonth}</p></div>
       </div>
-
-      <div style={styles.section}>
+<div style={styles.section}>
         <h2>📂 Course Information</h2>
         <p><strong>Total Courses:</strong> {mainCourses.length}</p>
         <Link to="/course-details">
         <p><strong>Total Sub-Courses:</strong> {Object.keys(subCourseDetails).length}</p>
         </Link>
       </div>
-
-      
-      <footer style={styles.footer}>priyag8601@gamil.com {new Date().getFullYear()}</footer>
+<footer style={styles.footer}>priyag8601@gamil.com {new Date().getFullYear()}</footer>
     </div>
   );
 };
-
 const styles = {
   container: {
     fontFamily: "Segoe UI",
@@ -299,5 +286,4 @@ const styles = {
     color: "#ccc",
   },
 };
-
 export default Home;

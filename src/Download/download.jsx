@@ -1,38 +1,29 @@
 import React, { useState } from 'react';
 import './downloads.css';
-
 function DownloadCertificate() {
   const [filename, setFilename] = useState('');
   const [message, setMessage] = useState('');
-
-  const handleDownload = async () => {
+const handleDownload = async () => {
     try {
-      const response = await fetch(`https://backend-znrk.onrender.com/api/download-certificate/${filename}`);
-      // if (!response.ok) {
-      //   throw new Error('Certificate not found');
-      // }
+      const response = await fetch(`https://studentform-4.onrender.com/api/download-certificate/${filename}`);
       if (!response.ok) {
         const errorBody = await response.json();
         throw new Error(errorBody.message || 'Certificate not found');
       }
-      
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
-
       const link = document.createElement('a');
       link.href = url;
       link.download = filename;
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
-      setMessage('✅ Certificate downloaded successfully!');
+setMessage('✅ Certificate downloaded successfully!');
     } catch (err) {
       setMessage('❌ ' + err.message);
     }
   };
-
-  return (
+return (
     <div className="download-container">
       <h2>🎓 Download Your Certificate</h2>
       <input
@@ -46,5 +37,4 @@ function DownloadCertificate() {
     </div>
   );
 }
-
 export default DownloadCertificate;

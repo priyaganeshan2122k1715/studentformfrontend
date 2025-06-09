@@ -8,24 +8,19 @@
     font-family: "Segoe UI", sans-serif;
     line-height: 1.6;
   }
-  
-  .admin-contact h2 {
+.admin-contact h2 {
     text-align: center;
     color: #333;
   }
-  
   .admin-contact a {
     color: #007bff;
     text-decoration: none;
     
   }
-  
   .admin-contact a:hover {
     text-decoration: underline;
   }
-  
-  
-  @media (max-width: 600px) {
+   @media (max-width: 600px) {
     .admin-contact {
       padding: 20px;
       font-size: 14px;

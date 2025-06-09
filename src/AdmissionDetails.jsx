@@ -1,5 +1,4 @@
 import React from "react";
-
 const AdmissionDetails = ({
   formData,
   handleInputChange,
@@ -18,7 +17,6 @@ const AdmissionDetails = ({
         Admission Details
       </label>
     </div>
-
     {showAdmissionDetails && (
       <>
         <div>
@@ -33,7 +31,6 @@ const AdmissionDetails = ({
             <option value="Advanced Course">Advanced Course</option>
           </select>
         </div>
-
         {formData.course && (
           <div>
             <label>Sub-Course:</label>
@@ -43,7 +40,6 @@ const AdmissionDetails = ({
               onChange={handleInputChange}
             >
               <option value="">Select Sub-Course</option>
-
               {formData.course === "Software Development" && (
                 <>
                   <option value="Java Full stack">Java Full Stack</option>
@@ -57,8 +53,7 @@ const AdmissionDetails = ({
                   <option value="Flutter/Swift">Flutter/Swift</option>
                 </>
               )}
-
-              {formData.course === "Server-side course" && (
+{formData.course === "Server-side course" && (
                 <>
                   <option value="Node.js/MongoDB">Node.js/MongoDB</option>
                   <option value="PHP">PHP</option>
@@ -69,8 +64,7 @@ const AdmissionDetails = ({
                   <option value="SAP">SAP</option>
                 </>
               )}
-
-              {formData.course === "Multimedia course" && (
+ {formData.course === "Multimedia course" && (
                 <>
                   <option value="Multimedia">Multimedia</option>
                   <option value="Photoshop">Photoshop</option>
@@ -79,8 +73,7 @@ const AdmissionDetails = ({
                   <option value="Preminder Pro">Premier Pro</option>
                 </>
               )}
-
-              {formData.course === "Web Development" && (
+{formData.course === "Web Development" && (
                 <>
                   <option value="HTML5/CSS3">HTML5/CSS3</option>
                   <option value="Mern/Mean">Mern/Mean Stack</option>
@@ -89,8 +82,7 @@ const AdmissionDetails = ({
                   <option value="UI UX Design">UI/UX Design</option>
                 </>
               )}
-
-              {formData.course === "Non-Coding Course" && (
+{formData.course === "Non-Coding Course" && (
                 <>
                   <option value="Tally GST">Tally GST</option>
                   <option value="SAP FI/CO">SAP FI/CO</option>
@@ -99,8 +91,7 @@ const AdmissionDetails = ({
                   <option value="UI UX Design">UI/UX Design</option>
                 </>
               )}
-
-              {formData.course === "Advanced Course" && (
+{formData.course === "Advanced Course" && (
                 <>
                   <option value="Data Science">Data Science</option>
                   <option value="AI / ML">AI / ML</option>
@@ -115,15 +106,13 @@ const AdmissionDetails = ({
             </select>
           </div>
         )}
-
-        <div>
+<div>
           <label>Course Type:</label>
           <select name="courseType" value={formData.courseType} onChange={handleInputChange}>
             <option value="online">Online</option>
             <option value="offline">Offline</option>
           </select>
         </div>
-
         <div>
           <label>Course Amount:</label>
           <input type="text" value={formData.courseAmount} readOnly />
@@ -136,7 +125,6 @@ const AdmissionDetails = ({
           <label>Course Duration:</label>
           <input type="text" value={formData.courseDuration} readOnly />
         </div>
-
         <div>
           <label>Admission Date:</label>
           <input
@@ -169,5 +157,4 @@ const AdmissionDetails = ({
     )}
   </>
 );
-
 export default AdmissionDetails;

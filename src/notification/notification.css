@@ -4,18 +4,15 @@
     padding: 20px;
     border-radius: 10px;
   }
-  
   .notifications h2 {
     font-size: 22px;
     margin-bottom: 20px;
     color: #333;
   }
-  
   .notifications ul {
     list-style: none;
     padding: 0;
   }
-  
   .notifications ul li {
     display: flex;
     justify-content: space-between;
@@ -26,31 +23,25 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
   }
-  
   .notifications ul li:hover {
     transform: translateY(-5px);
   }
-  
   .notifications ul li .message {
     font-size: 16px;
     font-weight: bold;
     color: #555;
   }
-  
   .notifications ul li .date {
     font-size: 14px;
     color: #888;
   }
-  
   .notifications ul li.deadline {
     border-left: 5px solid #007bff;
   }
-  
   .notifications ul li.update {
     border-left: 5px solid #28a745;
   }
-  
-  .notifications ul li.holiday {
+   .notifications ul li.holiday {
     border-left: 5px solid #dc3545;
   }
   

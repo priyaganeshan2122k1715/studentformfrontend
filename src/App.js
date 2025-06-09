@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 import RegisterForm from "./design";
 import LoginForm from "./LoginForm";
-
-
-
-
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userRole, setUserRole] = useState(""); 

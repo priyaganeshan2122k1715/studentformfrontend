@@ -1,7 +1,5 @@
-
 import React from "react";
 import "./courseDetails.css"; 
-
 const subCourseDetails = {
   "Java/J2EE": {
     online: { amount: "10000", tutor: "Maha", type: "online", duration: "6 months" },
@@ -153,8 +151,6 @@ const subCourseDetails = {
     offline: { amount: "17500", tutor: "Logesh", type: "offline", duration: "12 months" },
   },
 };
-
-
 const CourseDetails = () => {
   return (
     <div className="course-details-page">
@@ -187,5 +183,4 @@ const CourseDetails = () => {
     </div>
   );
 };
-
 export default CourseDetails;

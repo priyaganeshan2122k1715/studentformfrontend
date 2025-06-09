@@ -1,11 +1,7 @@
-
-
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './priya.css';
 import { FaThLarge, FaUserPlus, FaUser, FaFileAlt, FaClipboardList, FaSignOutAlt } from 'react-icons/fa';
-
 import Home from './Home/home';
 import RegisterForm from './RegisterForm';
 import ManageUsers from './manger/manger';
@@ -17,8 +13,7 @@ import Location from './location/location';
 import AdminContact from './Admincontact/admincontact';
 import Logout from './Logout/logout';
 import Feedback from './Feedback/Feedback';
-import Notifications from './notification/notification';  // Import the Notifications component
-
+import Notifications from './notification/notification';  
 function App() {
   return (
     <Router>
@@ -88,5 +83,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;

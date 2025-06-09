@@ -1,34 +1,24 @@
-
-
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
 const UserProfile = ({ userId }) => {
   const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    // Fetch profile info (replace with your real API or context)
-    axios.get(`https://backend-znrk.onrender.com/profile/${userId}`)
+useEffect(() => {
+    axios.get(`https://studentform-4.onrender.com/profile/${userId}`)
       .then(res => setUser(res.data))
       .catch(err => console.log("Profile fetch error:", err));
   }, [userId]);
-
-  if (!user) return <p>Loading profile...</p>;
-
-  return (
+if (!user) return <p>Loading profile...</p>;
+return (
     <div style={{ padding: "2rem", maxWidth: "800px", margin: "auto" }}>
       <h2>👤 {user.role === "admin" ? "Admin Profile" : "Student Profile"}</h2>
-
-      <section>
+<section>
         <h3>Basic Info</h3>
         <p><strong>Name:</strong> {user.name}</p>
         <p><strong>Email:</strong> {user.email}</p>
         <p><strong>Phone:</strong> {user.phone}</p>
         <p><strong>Address:</strong> {user.address}</p>
       </section>
-
-      {user.role === "admin" ? (
+ {user.role === "admin" ? (
         <section>
           <h3>📊 Admin Panel</h3>
           <p>Total Students: {user.totalStudents}</p>
@@ -49,12 +39,10 @@ const UserProfile = ({ userId }) => {
           <p><strong>Status:</strong> {user.completedTheCourse ? "Completed" : "Ongoing"}</p>
         </section>
       )}
-
-      <div style={{ marginTop: "2rem" }}>
+<div style={{ marginTop: "2rem" }}>
         <button>Logout</button>
       </div>
     </div>
   );
 };
-
 export default UserProfile;

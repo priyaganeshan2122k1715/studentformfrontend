@@ -1,5 +1,4 @@
 import React from "react";
-
 const CommonFields = ({ formData, handleInputChange }) => (
   <>
     <div>
@@ -23,5 +22,4 @@ const CommonFields = ({ formData, handleInputChange }) => (
     </div>
   </>
 );
-
 export default CommonFields;

@@ -1,23 +1,16 @@
-
-
 import React, { useState } from 'react';
 import axios from 'axios';
-
-
 const Feedback = () => {
   const [studentId, setStudentId] = useState('');
   const [feedbackText, setFeedbackText] = useState('');
   const [message, setMessage] = useState('');
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
-      const res = await axios.post('https://backend-znrk.onrender.com/api/feedback', {
+      const res = await axios.post('https://studentform-4.onrender.com/api/feedback', {
         studentId,
         feedbackText,
       });
-
       setMessage(res.data.message);
       setFeedbackText('');
       setStudentId('');
@@ -25,7 +18,6 @@ const Feedback = () => {
       setMessage('❌ Error submitting feedback');
     }
   };
-
   return (
     <div className="feedback-container">
       <h2>Submit Feedback</h2>
@@ -49,5 +41,4 @@ const Feedback = () => {
     </div>
   );
 };
-
 export default Feedback;

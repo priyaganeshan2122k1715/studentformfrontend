@@ -1,5 +1,4 @@
 import React from "react";
-
 const Location = () => (
   <div>
     <h2>Our Location</h2>
@@ -7,8 +6,7 @@ const Location = () => (
       📍 1/60(A), Odathalampathi,<br />
       Kunnathur, Tiruppur District - 638103, Tamil Nadu
     </p>
-
-    <iframe
+<iframe
       title="Google Map Location"
       width="100%"
       height="700"
@@ -20,5 +18,4 @@ const Location = () => (
     ></iframe>
   </div>
 );
-
 export default Location;

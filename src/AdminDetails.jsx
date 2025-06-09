@@ -1,6 +1,4 @@
-
 import React from "react";
-
 const AdminDetails = ({ formData, handleInputChange }) => (
   <>
     <h3>Student Details</h3>
@@ -22,5 +20,4 @@ const AdminDetails = ({ formData, handleInputChange }) => (
     </div>
   </>
 );
-
 export default AdminDetails;

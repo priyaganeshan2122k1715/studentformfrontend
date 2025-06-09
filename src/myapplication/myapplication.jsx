@@ -1,15 +1,11 @@
-
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
 const MyApplications = () => {
   const [applications, setApplications] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
-
-  useEffect(() => {
+useEffect(() => {
     axios
-      .get("https://backend-znrk.onrender.com/api/myApplications")
+      .get("https://studentform-4.onrender.com/api/myApplications")
       .then((response) => {
         setApplications(response.data);
       })
@@ -18,10 +14,9 @@ const MyApplications = () => {
         console.error("Error fetching applications:", err);
       });
   }, []);
-
-  const handleCancelApplication = (applicationId) => {
+const handleCancelApplication = (applicationId) => {
     axios
-      .delete(`https://backend-znrk.onrender.com/api/cancelApplication/${applicationId}`)
+      .delete(`https://studentform-4.onrender.com/api/cancelApplication/${applicationId}`)
       .then(() => {
         setApplications((prevApps) =>
           prevApps.filter((app) => app.id !== applicationId)
@@ -33,12 +28,10 @@ const MyApplications = () => {
         console.error("Error cancelling application:", err);
       });
   };
-
-  return (
+return (
     <div>
       <h2>My Applications</h2>
-
-      {applications.length > 0 ? (
+{applications.length > 0 ? (
         <ul>
           {applications.map((app) => (
             <li key={app.id}>
@@ -59,5 +52,4 @@ const MyApplications = () => {
     </div>
   );
 };
-
 export default MyApplications;
