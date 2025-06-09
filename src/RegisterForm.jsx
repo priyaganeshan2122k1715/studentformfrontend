@@ -92,10 +92,7 @@ const RegisterForm = () => {
       online: { amount: "13000", tutor: "Surya", type: "online", duration: "6 months" },
       offline: { amount: "13500", tutor: "Anbu", type: "offline", duration: "6 months" },
     },
-    "Python/Django": {
-      online: { amount: "12500", tutor: "Surya", type: "online", duration: "6 months" },
-      offline: { amount: "13000", tutor: "Anbu", type: "offline", duration: "6 months" },
-    },
+    
     "Photoshop": {
       online: { amount: "8000", tutor: "Santhosh", type: "online", duration: "3 months" },
       offline: { amount: "8500", tutor: "Santhosh", type: "offline", duration: "3 months" },
@@ -189,10 +186,7 @@ const RegisterForm = () => {
       online: { amount: "17000", tutor: "Logesh", type: "online", duration: "12 months" },
       offline: { amount: "17500", tutor: "Logesh", type: "offline", duration: "12 months" },
     },
-    "Ethical Hacking": {
-      online: { amount: "17000", tutor: "Logesh", type: "online", duration: "12 months" },
-      offline: { amount: "17500", tutor: "Logesh", type: "offline", duration: "12 months" },
-    },
+    
   };
 
 
